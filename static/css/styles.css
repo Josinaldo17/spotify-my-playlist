@@ -1,0 +1,371 @@
+/* import fonts from fonts.css file */
+@import url(./fonts.css);
+
+/* import css variabels */
+@import url(./partials/_variables.css);
+
+/* Import CSS global */
+@import url(partials/_global.css);
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1F5E6B;
+    color: #fff;
+}
+strong{
+    color: #000000;
+}
+
+.contrateme-social a > i{
+    background-color: #000000;
+    font-size: 27px;
+    border: solid 1px;
+    border-color: #000000;
+    margin: 0px 15px 0px 15px;
+    padding: 10px;
+    border-radius: 49%;
+    color: white;
+
+}
+
+.header_area .main-menu .navbar .navbar-brand img{
+    width: 40%;
+   
+}
+.header_area .main-menu .navbar .navbar-brand{
+    padding: 0 0px 0 5rem;
+    
+}
+.header_area .main-menu .nav-item .nav-link{
+	font: normal 500 15px/2px var(--roboto), sans-serif;
+    text-transform: uppercase;
+    padding: 1.7rem;
+    color: var(--title-color);
+    
+}
+.header_area .main-menu .navbar .active{
+	background: var(--gradient-color);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.header_area .main-menu .navbar a:hover{
+	background: var(--gradient-color);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+    
+}
+
+/* perfil area*/
+
+.site-main .site-banner .site-title h3{
+	padding-top: 10%;
+	font-weight: 500;
+}
+.site-main .site-banner .site-title h3::after {
+    content: " 👋🏾";
+    margin-left: 5%;
+    margin-bottom: 1%;
+    display: inline-block;
+    animation: wave 1.7s infinite; /* Animação de aceno */
+    transform-origin: 70% 70%; /* Ponto de origem para o aceno */
+}
+
+/* Definição da animação */
+@keyframes wave {
+    50% { transform: rotate(-10deg); } /* Inclina para a esquerda */
+}
+.site-main .site-banner .site-title h1{
+	font-size: 5rem;
+}
+.site-main .site-banner .site-title{
+    padding: 1rem 30;
+}
+.site-main .site-banner .site-title h4{
+	font-size: 1.5rem;
+}
+.site-main .site-banner .banner-image > img{
+	padding: 1rem 30;
+	width: 90rem;
+}
+
+
+/* bio */
+
+.site-main .about-area-home{
+	padding: 1rem 3rem 6rem 3rem;
+}
+.site-main .about-area-home img{
+	padding-top: 10rem;
+}
+
+.site-main .about-area-home .about-title h2 > span{
+	display: block;
+    text-align: center;
+	font: normal bold 49px/60px var(--roboto),  sans-serif;
+	letter-spacing: 21px;
+}
+
+
+.site-main .about-area-home .about-title .bio > p{
+	padding: .4rem 20px 0 20px;
+}
+
+
+/* Rodape */
+
+.social h3{
+    padding-top: 1%;
+}
+footer{
+    background: linear-gradient(to bottom, transparent 70%, #00000082 30%); 
+}
+footer.footer-area .rodapefinal {
+	padding: 1rem 0 0 0 ;
+}
+footer.footer-area img{
+    width: 100px;
+    padding-bottom: 4rem;
+
+}
+footer.footer-area .rodapefinal .social h5{
+	font: normal 500 18px/30px var(--roboto), sans-serif;
+}
+footer.footer-area .rodapefinal .col-md-4 a > i{
+	font-size: 27px;
+    margin-left: 30px;
+
+	color: black;
+}
+footer.footer-area .rodapefinal .social a:hover > i{
+	color: var(--primary-color);
+}
+footer.footer-area .rodapefinal p{
+	color: black;
+}
+
+/* ===================================== PAG SOBRE MIM=================================================== */
+
+
+.site-main .about-area{
+	padding: 8rem 5rem;
+}
+
+
+.site-main .about-area .about-title h2 > span{
+	display: block;
+    text-align: center;
+	font: normal bold 49px/60px var(--roboto), sans-serif;
+	letter-spacing: 21px;
+}
+
+.site-main .about-area .about-title .paragraph > p{
+	padding: .4rem 0;
+}
+
+/*  skillll*/
+
+
+h2.titulo-skill {
+    display: block;
+    text-align: center;
+    font: normal bold 49px/60px var(--roboto), sans-serif;
+    letter-spacing: 11px;
+    color: transparent;
+    background: linear-gradient(90deg,  #ffffff, #ffffff,  #ffffff,  #000000,  #ffffff, #ffffff);
+    background-clip: text; 
+    -webkit-background-clip: text; 
+    background-size: 200%; 
+    animation: gradientAnimation 5s linear infinite; 
+}
+
+/* Definição da animação */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%; /* Começa com o gradiente no início */
+    }
+    100% {
+        background-position: 100% 50%; /* Move o gradiente para o final */
+    }
+    0% {
+        background-position: 0% 50%; /* Começa com o gradiente no início */
+    }
+}
+
+.site-main .brand-area{
+	padding: 1rem 10rem;
+	margin-bottom: 4rem;
+}
+
+.site-main .brand-area .row .col-lg-3{
+	display: flex;
+	justify-content: center;
+}
+
+.site-main .brand-area .row     .col-lg-3 > .single-brand{
+    border:  2px solid;
+    border-image: linear-gradient(to top, #000000, #31e1ff,  #7a24ba, #ffffff) 1;
+    padding: 20px;
+	text-align: center;
+	padding: 1.8rem 0rem;
+	margin: .9rem 0;
+	width: 260px;
+	height: 150px;
+	transition: transform .4s ease;
+}
+.site-main .brand-area .row .col-lg-3 .single-brand > svg{
+    width: 100px;
+    height: 100px;
+    color:  #ffffff;
+}
+
+.site-main .brand-area .row .col-lg-3 > .single-brand:hover{
+	box-shadow: var(--box-shadow);
+	transform: scale(1.1);
+}
+
+.site-main .brand-area .row .col-lg-3 > .single-brand:hover > img{
+	filter: brightness(0.15);
+}
+
+
+/* =============== SERVIÇOS ==================*/
+
+.site-main .services-area{
+	padding: 0rem 2rem;
+}
+
+.site-main .services-area .services-title{
+	padding: 0rem 14rem;
+}
+
+.site-main .services-area .services-title h1{
+	font-size: 35px;
+	letter-spacing: 12px;
+}
+
+.site-main .services-area .row .services{
+    border: solid 1px;
+    border-image: linear-gradient(to top, #000000, #31e1ff,  #7a24ba, #ffffff) 1; ;
+	background: #ffffff00;
+	padding: 2rem 0;
+	width: 16rem;
+    height: 35rem;
+	margin: 5rem .5rem;
+	transition: transform .4s ease;
+}
+
+.site-main .services-area .row .services:hover{
+	box-shadow: var(--box-shadow);    
+	transform: scale(1.1);
+    
+}
+
+/*    TRABALHOS RECENTES   */
+
+
+.site-main .trabalhos-recentes{
+	padding: 0rem 2rem;
+    margin-bottom: 2rem;
+}
+
+.site-main .trabalhos-recentes .services-title{
+	padding: 0rem 14rem;
+}
+
+.site-main .trabalhos-recentes .services-title h1{
+	font-size: 35px;
+	letter-spacing: 12px;
+}
+
+.site-main .trabalhos-recentes .row .services{
+    border: solid 1px;
+    border-image: linear-gradient(to top, #000000, #31e1ff,  #7a24ba, #ffffff) 1; ;
+	background: #ffffff00;
+	padding: 2rem 0;
+	width: 23rem;
+    height: 50rem;
+	margin: 5rem .5rem;
+}
+
+.site-main .trabalhos-recentes .row .services:hover{
+	border-image: linear-gradient(to top, #ffffff, #7a24ba, #31e1ff, #000000) 1; ;
+
+}
+.site-main .trabalhos-recentes .row .services img{
+    width: 250px;
+}
+
+
+/*
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    margin-top: 5px;
+}
+
+form button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+*/
+/* Estilizar o botão dropdown */
+
+/* Estilizar o menu suspenso */
+.dropdown-menu {
+    border: solid 1px;
+    border-image: linear-gradient(to top, #00000040, #31e0ff4a,  #7924ba48, #ffffff39) 1; ;
+	background: #1f5e6bda;
+    padding: 10px; /* Espaçamento dentro do menu */
+    margin-top: 10px; /* Espaço entre o botão e o menu */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: all 0.3s ease; /* Animação suave */
+}
+
+/* Estilizar os itens do menu suspenso */
+.dropdown-item {
+    color: #ffffff; /* Cor do texto */
+    padding: 10px 15px; /* Espaçamento interno */
+    transition: background-color 0.3s ease; /* Animação suave */
+}
+
