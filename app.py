@@ -1,4 +1,5 @@
 from flask import Flask, redirect, render_template, request
+import os
 
 app = Flask(__name__)
 
@@ -7,8 +8,8 @@ def teste():
     return redirect('/playlist')
     
 @app.route('/playlist')
-def index():
-    return render_template('index.html')
+def index():    
+    return render_template("index.html", bot_token=bot_token)
 
 @app.before_request
 def force_https():
