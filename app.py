@@ -9,6 +9,7 @@ def teste():
     
 @app.route('/playlist')
 def index():    
+    bot_token = os.environ.get('BOT_SPOTIFY')
     return render_template("index.html", bot_token=bot_token)
 
 @app.before_request
