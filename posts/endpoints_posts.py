@@ -2,8 +2,6 @@ from sqlalchemy import text
 from config import db
 from flask import request, jsonify
 from functools import wraps
-import datetime
-import jwt
 
 def adicionar_transacao():
     try:

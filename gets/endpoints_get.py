@@ -1,4 +1,3 @@
- 
 from sqlalchemy import text
 import re
 from config import db  # Importa db de database.py
