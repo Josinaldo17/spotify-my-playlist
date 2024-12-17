@@ -1,0 +1,37 @@
+CREATE OR REPLACE FUNCTION obter_soma_transacoes(mes_hj INT, ano_hj INT)
+RETURNS TABLE (
+    total NUMERIC, 
+    prioridade INT, 
+    nome VARCHAR, 
+    hoje NUMERIC
+) AS $$
+BEGIN
+    RETURN QUERY
+    (
+        -- Soma total para o mês/ano especificado
+       SELECT 
+	    SUM(valor::numeric) AS total,  -- Soma total do mês/ano
+	    1 AS prioridade,
+	    'Total' AS nome,
+	    COALESCE(SUM(CASE WHEN dia = CURRENT_DATE THEN valor::numeric ELSE 0 END), 0) AS hoje -- Soma do dia atual
+	FROM app.transacao
+	WHERE EXTRACT(MONTH FROM dia) = mes_hj  
+	  AND EXTRACT(YEAR FROM dia) = ano_hj  
+	
+	UNION
+	
+	-- Soma por nome_trampo para o mês/ano especificado, com soma do dia atual específica
+	SELECT 
+	    SUM(valor::numeric) AS total,  -- Soma total do mês/ano por nome_trampo
+	    2 AS prioridade,
+	    nome_trampo AS nome,
+	    COALESCE(SUM(CASE WHEN dia = CURRENT_DATE THEN valor::numeric ELSE 0 END), 0) AS hoje -- Soma do dia atual
+	FROM app.transacao
+	WHERE EXTRACT(MONTH FROM dia) = mes_hj  
+	  AND EXTRACT(YEAR FROM dia) = ano_hj  
+	GROUP BY nome_trampo
+		
+    ) 
+ORDER BY prioridade;
+END;
+$$ LANGUAGE plpgsql;
