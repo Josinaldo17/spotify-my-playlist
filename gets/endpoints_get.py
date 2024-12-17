@@ -3,8 +3,6 @@ from sqlalchemy import text
 import re
 from config import db  # Importa db de database.py
 from flask import jsonify
-import datetime
-import jwt
 
 def select_trampo():
     query = text('SELECT * FROM app.trampo')
