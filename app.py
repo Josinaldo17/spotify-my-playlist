@@ -1,9 +1,6 @@
 from flask import Flask, redirect, render_template, request, jsonify
 from flask_cors import CORS
-import jwt
 import os
-from sqlalchemy import text
-import datetime
 from config import Config, db 
 from gets.endpoints_get import select_trampo, select_transacao, select_totaisTrampo
 from posts.endpoints_posts import  adicionar_transacao, adicionar_trampo
