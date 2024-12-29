@@ -17,7 +17,7 @@ def update_transacao(id):
 
         # Executando a query
         db.session.execute(query, {
-            'nome_trampo': dados['nome'],
+            'nome_trampo': dados['nome_trampo'],
             'valor': float(dados['valor']),
             'id': id
         })
