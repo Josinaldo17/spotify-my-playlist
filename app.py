@@ -4,6 +4,7 @@ import os
 from config import Config, db 
 from gets.endpoints_get import select_trampo, select_transacao, select_totaisTrampo
 from posts.endpoints_posts import  adicionar_transacao, adicionar_trampo
+from puts.endpoints_put import update_transacao
 
 app = Flask(__name__)
 app.config.from_object(Config) 
@@ -48,6 +49,9 @@ def post_trampo():
     data = request.json
     return adicionar_trampo()
 
+@app.route('/updatetransacao/<int:id>', methods=['PUT'])
+def put_transacao(id):
+    return update_transacao(id)
 
 if __name__ == '__main__':
     app.run(debug=True)
